@@ -5,3 +5,4 @@ Project Ideas
 (3) Personal Music Library - To manage your favourite songs, reading the lyrics and search for new songs.
 (4) News Letter - This takes news feeds from different news sites and brings it to a one place and show it in your app.
 (5) Earthquake App - Collects real time feeds & notifications about earthquakes and shows to the user.
+
