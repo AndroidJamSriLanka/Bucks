@@ -31,6 +31,13 @@ Solution
 
 Data Sources
 
+- Yahoo Finance API
+- Google Exchange Rate Query
+- Open Source Exchange Rates API
+- European Central Bank Feed (Fixer.io)
+(will be using data from the above APIs (will not use all but some))
+
+
 
 
 
