@@ -27,6 +27,7 @@ import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Currency;
 import java.util.List;
 
 public class CurrencyFragment extends Fragment {
@@ -116,13 +117,10 @@ public class CurrencyFragment extends Fragment {
 
                 Double rate = keyJsonObject.getDouble(GER_RATE);
                 String name = keyJsonObject.getString(GER_NAME);
+                String symbol = (Currency.getInstance(key)).getSymbol();
 
-                resultStrs[i++] =  time + " - " + key + " - " + name + " - " + " - " + rate ;
-            }
 
-        //           symbol
-            for (String s : resultStrs) {
-                Log.v(LOG_TAG, "Currency entry: " + s);
+                resultStrs[i++] =  time + " - " + key + " - " + name + " - " + symbol + " " + rate ;
             }
             return resultStrs;
         }
@@ -209,6 +207,16 @@ public class CurrencyFragment extends Fragment {
                 e.printStackTrace();
             }
             return null;
+        }
+
+        @Override
+        protected void onPostExecute(String[] result) {
+            if(result != null) {
+                adapter.clear();
+                for (String item : result) {
+                    adapter.add(item);
+                }
+            }
         }
     }
 }
