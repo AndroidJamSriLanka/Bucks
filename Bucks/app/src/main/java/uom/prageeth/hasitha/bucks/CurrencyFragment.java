@@ -1,8 +1,11 @@
 package uom.prageeth.hasitha.bucks;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.text.format.Time;
 import android.util.Log;
@@ -12,6 +15,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -52,11 +56,24 @@ public class CurrencyFragment extends Fragment {
         int id = item.getItemId();
 
         if (id == R.id.action_refresh) {
-            FetchCurrencyRatesTask currencyRatesTask = new FetchCurrencyRatesTask();
-            currencyRatesTask.execute();
+            updateCurrency();
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void updateCurrency(){
+        FetchCurrencyRatesTask currencyRatesTask = new FetchCurrencyRatesTask();
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        String base = prefs.getString(getString(R.string.pref_base_currency_key),
+                getString(R.string.pref_USD_value));
+        currencyRatesTask.execute(base);
+    }
+
+    @Override
+    public void onStart(){
+        super.onStart();
+        updateCurrency();
     }
 
     @Override
@@ -64,35 +81,34 @@ public class CurrencyFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
 
-        String[] currencyData = {
-                "2015-04-14 USD - United States Dollor - $ 1.0000",
-                "2015-04-14 LKR - Sri Lankan Rupee - Rs 131.0536",
-                "2015-04-14 AUD - Australian Dollor - $ 1.2889",
-                "2015-04-14 EUR - Euro - € 0.9371",
-                "2015-04-14 CHF - Swiss Franc - CHF 0.9634",
-                "2015-04-14 GBP - British Pound - £ 0.6736",
-                "2015-04-14 JPY - Japanese Yen - ¥ 119.3536",
-                "2015-04-14 SGD - Singapore Dollor - $ 1.3547",
-                "2015-04-14 CHF - Swiss Franc - CHF 0.9634",
-                "2015-04-14 GBP - British Pound - £ 0.6736",
-                "2015-04-14 AUD - Australian Dollor - $ 1.2889"
-        };
-
-        List<String> currencyList = new ArrayList<String>(Arrays.asList(currencyData));
-        adapter = new  ArrayAdapter<String>(getActivity(),R.layout.currency_item,R.id.currency_item_textview,currencyList);
+        adapter = new  ArrayAdapter<String>(getActivity(),R.layout.currency_item,R.id.currency_item_textview,new ArrayList<String>());
 
         ListView listView = (ListView)rootView.findViewById(R.id.currency_listview);
         listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                // Two methods to get the currency data items at a specific position in the Adapter or AdapterView
+                String currency = adapter.getItem(position);
+               //String currency = (String) adapterView.getItemAtPosition(position);
+
+                Intent intent = new Intent(getActivity(), CurrencyDetailActivity.class)
+                                    .putExtra(Intent.EXTRA_TEXT,currency);
+                startActivity(intent);
+                //Toast.makeText(getActivity(),currency, Toast.LENGTH_SHORT).show();
+            }
+        });
         return rootView;
     }
 
-    public class FetchCurrencyRatesTask extends AsyncTask<Void,Void,String[]> {
+    public class FetchCurrencyRatesTask extends AsyncTask<String,Void,String[]> {
 
         private final String LOG_TAG = FetchCurrencyRatesTask.class.getSimpleName();
         private String[] currencyTypeArray = {"USD","EUR","GBP","AUD","JPY","CAD","CHF","CNY","SGD","LKR"};
 
         private String getReadableDateTimeString(long time){
-            SimpleDateFormat dateTimeFormat = new SimpleDateFormat("EEE,dd MMM yyyy hh:mm");
+            SimpleDateFormat dateTimeFormat = new SimpleDateFormat("EEE, dd MMM yyyy hh:mm");
             return dateTimeFormat.format(time);
         }
 
@@ -126,7 +142,7 @@ public class CurrencyFragment extends Fragment {
         }
 
         @Override
-        protected String[] doInBackground(Void... params) {
+        protected String[] doInBackground(String... params) {
 
             if (currencyTypeArray.length == 0) {
                 return null;
@@ -149,10 +165,12 @@ public class CurrencyFragment extends Fragment {
             try {
                 // http://www.getexchangerates.com/api/
                 final String CURRENCY_RATES_BASE_URL = "http://www.getexchangerates.com/api/latest.json?";
+                final String CURRENCY_BASE_PARAM = "base";
                 final String CURRENCY_NAMES_PARAM = "include";
                 final String CURRENCY_TYPES_PARAM = "currencies";
 
                 Uri builtUri = Uri.parse(CURRENCY_RATES_BASE_URL).buildUpon()
+                        .appendQueryParameter(CURRENCY_BASE_PARAM, params[0])
                         .appendQueryParameter(CURRENCY_NAMES_PARAM, includeCurrencyNames)
                         .appendQueryParameter(CURRENCY_TYPES_PARAM, currencyType.toString())
                         .build();
