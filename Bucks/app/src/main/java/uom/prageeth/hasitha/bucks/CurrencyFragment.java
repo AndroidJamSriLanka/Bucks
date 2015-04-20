@@ -105,14 +105,14 @@ public class CurrencyFragment extends Fragment {
     public class FetchCurrencyRatesTask extends AsyncTask<String,Void,String[]> {
 
         private final String LOG_TAG = FetchCurrencyRatesTask.class.getSimpleName();
-        private String[] currencyTypeArray = {"USD","EUR","GBP","AUD","JPY","CAD","CHF","CNY","SGD","LKR"};
+        private String[] currencyTypeArray = {"EUR","GBP","AUD","USD","JPY","CAD","CHF","CNY","SGD","LKR"};
 
         private String getReadableDateTimeString(long time){
             SimpleDateFormat dateTimeFormat = new SimpleDateFormat("EEE, dd MMM yyyy hh:mm");
             return dateTimeFormat.format(time);
         }
 
-        private String[] getCurrencyRatesFromJson(String currencyJsonString)
+        private String[] getCurrencyRatesFromJson(String currencyJsonString, String base)
                 throws JSONException {
 
             final String GER_RATE = "rate";
@@ -124,10 +124,20 @@ public class CurrencyFragment extends Fragment {
             timeObj.setToNow();
             String time = getReadableDateTimeString(timeObj.toMillis(false));
 
-            String[] resultStrs = new String[currencyTypeArray.length];
-            int i = 0;
+            String[] resultStrs = new String[currencyTypeArray.length +1];
 
+            JSONObject baseJsonObject = currencyJson.getJSONObject(base);
+            resultStrs[0] = time + " - " + base
+                                 + " - " + baseJsonObject.getString(GER_NAME)
+                                 + " - " + (Currency.getInstance(base)).getSymbol()
+                                 + " " + baseJsonObject.getDouble(GER_RATE);
+
+            int i = 1;
             for(String key :currencyTypeArray){
+
+                if (key.equals(base)){
+                    continue;
+                }
 
                 JSONObject keyJsonObject = currencyJson.getJSONObject(key);
 
@@ -219,7 +229,7 @@ public class CurrencyFragment extends Fragment {
                 }
             }
             try{
-                return getCurrencyRatesFromJson(currencyJsonString);
+                return getCurrencyRatesFromJson(currencyJsonString, params[0]);
             }catch (JSONException e){
                 Log.e(LOG_TAG, e.getMessage(), e);
                 e.printStackTrace();
@@ -231,8 +241,10 @@ public class CurrencyFragment extends Fragment {
         protected void onPostExecute(String[] result) {
             if(result != null) {
                 adapter.clear();
-                for (String item : result) {
-                    adapter.add(item);
+                for (String item: result){
+                    if(item != null) {
+                        adapter.add(item);
+                    }
                 }
             }
         }
