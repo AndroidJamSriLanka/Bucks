@@ -26,13 +26,13 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.math.BigDecimal;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Currency;
-import java.util.List;
+
 
 public class CurrencyFragment extends Fragment {
 
@@ -48,7 +48,7 @@ public class CurrencyFragment extends Fragment {
     }
 
     public void onCreateOptionsMenu(Menu menu,MenuInflater inflater) {
-        inflater.inflate(R.menu.currencyfragment, menu);
+        inflater.inflate(R.menu.main_currency_fragment, menu);
     }
 
     @Override
@@ -105,11 +105,16 @@ public class CurrencyFragment extends Fragment {
     public class FetchCurrencyRatesTask extends AsyncTask<String,Void,String[]> {
 
         private final String LOG_TAG = FetchCurrencyRatesTask.class.getSimpleName();
+        private final int DEFAULT_DECIMALS = 4;
         private String[] currencyTypeArray = {"EUR","GBP","AUD","USD","JPY","CAD","CHF","CNY","SGD","LKR"};
 
         private String getReadableDateTimeString(long time){
             SimpleDateFormat dateTimeFormat = new SimpleDateFormat("EEE, dd MMM yyyy hh:mm");
             return dateTimeFormat.format(time);
+        }
+
+        private Double setDecimals(Double rate, int decimals){
+          return (new BigDecimal(rate)).setScale(decimals,BigDecimal.ROUND_HALF_UP).doubleValue();
         }
 
         private String[] getCurrencyRatesFromJson(String currencyJsonString, String base)
@@ -124,7 +129,10 @@ public class CurrencyFragment extends Fragment {
             timeObj.setToNow();
             String time = getReadableDateTimeString(timeObj.toMillis(false));
 
-            String[] resultStrs = new String[currencyTypeArray.length +1];
+            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
+            int decimals = Integer.parseInt(prefs.getString(getString(R.string.pref_decimals_key), getString(R.string.pref_decimals_4_value)));
+
+            String[] resultStrs = new String[currencyJson.length() -1];
 
             JSONObject baseJsonObject = currencyJson.getJSONObject(base);
             resultStrs[0] = time + " - " + base
@@ -138,13 +146,11 @@ public class CurrencyFragment extends Fragment {
                 if (key.equals(base)){
                     continue;
                 }
-
                 JSONObject keyJsonObject = currencyJson.getJSONObject(key);
 
-                Double rate = keyJsonObject.getDouble(GER_RATE);
+                Double rate = (decimals == DEFAULT_DECIMALS)? keyJsonObject.getDouble(GER_RATE): setDecimals(keyJsonObject.getDouble(GER_RATE),decimals);
                 String name = keyJsonObject.getString(GER_NAME);
                 String symbol = (Currency.getInstance(key)).getSymbol();
-
 
                 resultStrs[i++] =  time + " - " + key + " - " + name + " - " + symbol + " " + rate ;
             }
@@ -242,9 +248,7 @@ public class CurrencyFragment extends Fragment {
             if(result != null) {
                 adapter.clear();
                 for (String item: result){
-                    if(item != null) {
                         adapter.add(item);
-                    }
                 }
             }
         }

@@ -18,6 +18,12 @@
         android:entries="@array/pref_currency_options"
         android:entryValues="@array/pref_currency_types"/>
 
+   <ListPreference
+        android:title="@string/pref_decimals_label"
+        android:key="@string/pref_decimals_key"
+        android:defaultValue="@string/pref_decimals_4_value"
+        android:entries="@array/pref_decimals_options"
+        android:entryValues="@array/pref_decimals"/>
 
 
 

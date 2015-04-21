@@ -337,16 +337,20 @@
     <string name="pref_ZMK_value" translatable="false">ZMK</string>
     <string name="pref_ZWL_value" translatable="false">ZWL</string>
 
+    <!-- Decimals -->
+    <string name="pref_decimals_label">Decimals</string>
+    <string name="pref_decimals_key">decimals</string>
 
-    <!-- Label for imperial option in temperature unit preference [CHAR LIMIT=25] -->
-    <string name="pref_units_label_imperial">Imperial</string>
+    <string name="pref_decimals_2_lable">2</string>
+    <string name="pref_decimals_3_lable">3</string>
+    <string name="pref_decimals_4_lable">4</string>
 
+    <string name="pref_decimals_2_value" translatable="false">2</string>
+    <string name="pref_decimals_3_value" translatable="false">3</string>
+    <string name="pref_decimals_4_value" translatable="false">4</string>
 
+    <!-- Share Action Provider -->
 
-    <!-- Value in SharedPreferences for metric temperature unit option [CHAR LIMIT=NONE] -->
-    <string name="pref_units_metric" translatable="false">metric</string>
-
-    <!-- Value in SharedPreferences for imperial temperature unit option [CHAR LIMIT=NONE] -->
-    <string name="pref_units_imperial" translatable="false">imperial</string>
+    <string name="action_share">Share</string>
 
 </resources>

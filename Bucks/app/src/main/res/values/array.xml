@@ -315,4 +315,18 @@
         <item>@string/pref_ZMK_value</item>
         <item>@string/pref_ZWL_value</item>
     </string-array>
+
+    <string-array name="pref_decimals_options">
+        <item>@string/pref_decimals_2_lable</item>
+        <item>@string/pref_decimals_3_lable</item>
+        <item>@string/pref_decimals_4_lable</item>
+    </string-array>
+
+    <string-array name="pref_decimals">
+        <item>@string/pref_decimals_2_value</item>
+        <item>@string/pref_decimals_3_value</item>
+        <item>@string/pref_decimals_4_value</item>
+    </string-array>
+
+
 </resources>

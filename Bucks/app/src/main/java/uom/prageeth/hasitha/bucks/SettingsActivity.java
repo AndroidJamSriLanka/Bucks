@@ -29,6 +29,7 @@ public class SettingsActivity extends PreferenceActivity
         // updated when the preference changes.
         bindPreferenceSummaryToValue(findPreference(getString(R.string.pref_display_name_key)));
         bindPreferenceSummaryToValue(findPreference(getString(R.string.pref_base_currency_key)));
+        bindPreferenceSummaryToValue(findPreference(getString(R.string.pref_decimals_key)));
     }
 
     /**
