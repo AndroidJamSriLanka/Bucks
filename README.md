@@ -33,6 +33,18 @@ Data Sources
 
 - Get Exchange Rates API (http://www.getexchangerates.com/api/)
 
+**************************************************************************************************************************************
+
+Work Done
+
+- Finalized the data source Get Exchange Rates API.
+- Pasing json data (Currency Base,Currency Codes,Currency Rates) extracted from the API call.
+- Drafted the UI design thinking of the UX.
+- Created activities and setup few settings(using preferences).
+- Used shared preferences to store the data.
+- Used explicit and implicit intents(share intent).
+- Started creating the database for the app.
+
 
 
 
