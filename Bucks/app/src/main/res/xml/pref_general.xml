@@ -6,6 +6,7 @@
 
     <EditTextPreference
         android:title="@string/pref_display_name_label"
+        android:textColor="@color/primaryColor"
         android:key="@string/pref_display_name_key"
         android:defaultValue="@string/pref_display_name_default"
         android:inputType="textCapWords"
@@ -24,7 +25,5 @@
         android:defaultValue="@string/pref_decimals_4_value"
         android:entries="@array/pref_decimals_options"
         android:entryValues="@array/pref_decimals"/>
-
-
 
 </PreferenceScreen>

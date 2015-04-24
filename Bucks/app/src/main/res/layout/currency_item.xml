@@ -5,7 +5,5 @@
     android:layout_height="wrap_content"
     android:minHeight="?android:attr/listPreferredItemHeight"
     android:gravity="center"
-    android:id="@+id/currency_item_textview"
-    android:background="#ff2ebdff"
-    android:textColor="#ffffffff">
+    android:id="@+id/currency_item_textview">
 </TextView>
