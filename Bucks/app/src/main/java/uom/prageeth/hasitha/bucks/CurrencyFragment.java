@@ -152,7 +152,7 @@ public class CurrencyFragment extends Fragment {
                 String name = keyJsonObject.getString(GER_NAME);
                 String symbol = (Currency.getInstance(key)).getSymbol();
 
-                resultStrs[i++] =  time + " - " + key + " - " + name + " - " + symbol + " " + rate ;
+                resultStrs[i++] =  time + " - " + name + " - " + symbol + " " + rate ;
             }
             return resultStrs;
         }

@@ -4,8 +4,9 @@
     <color name="primaryColorDark">#0097A7</color>
     <color name="accentColor">#009688</color>
     <color name="textColorPrimary">#ffffff</color>
-    <color name="textColorSecondary">#009688</color>
+    <color name="textColorSecondary">#ffffff</color>
     <color name="navigationBarColor">#00BCD4</color>
     <color name="windowBackground">#B2EBF2</color>
+    <color name="navigationDrawerColor">#ffffff</color>
 
 </resources>

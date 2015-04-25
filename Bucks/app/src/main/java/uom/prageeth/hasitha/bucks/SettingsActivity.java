@@ -1,12 +1,11 @@
 package uom.prageeth.hasitha.bucks;
 
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
-import android.view.KeyEvent;
+import android.support.v7.widget.Toolbar;;
 
 /**
  * A {@link PreferenceActivity} that presents a set of application settings.
@@ -18,6 +17,8 @@ import android.view.KeyEvent;
  */
 public class SettingsActivity extends PreferenceActivity
         implements Preference.OnPreferenceChangeListener {
+
+    private Toolbar toolbar;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
