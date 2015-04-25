@@ -6,7 +6,7 @@
 
     <EditTextPreference
         android:title="@string/pref_display_name_label"
-        android:textColor="@color/primaryColor"
+        android:textColor="@color/textColorSecondary"
         android:key="@string/pref_display_name_key"
         android:defaultValue="@string/pref_display_name_default"
         android:inputType="textCapWords"
