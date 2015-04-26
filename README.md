@@ -42,7 +42,7 @@ So if you are,
 
 **************************************************************************************************************************************
 
-</h4>Work Done</h4>
+<h4>Work Done</h4>
 
 - Finalized the data source Get Exchange Rates API.
 - Pasing json data (Currency Base,Currency Codes,Currency Rates) extracted from the API call.
@@ -58,29 +58,54 @@ So if you are,
 
 <h3>Screenshots</h3>
 
-![Bucks Logo](https://github.com/AndroidJamSriLanka/Bucks/blob/master/Bucks%20UI/Bucks%20Logo.jpg "Bucks Logo")
-
-
-![Bucks Logo]("https://github.com/AndroidJamSriLanka/Bucks/blob/master/Bucks%20UI/Bucks%20Logo.jpg" "Bucks Logo")
-
 
 ![Bucks Logo](https://github.com/AndroidJamSriLanka/Bucks/blob/master/Bucks%20UI/Bucks%20Logo.jpg "Bucks Logo")
+
+
+
+
 
 
 ![Screenshot_UI-1](https://github.com/AndroidJamSriLanka/Bucks/blob/master/Bucks%20UI/Screenshot_UI-1.png "Navigation Drawer")
 
 
+
+
+
+
 ![Screenshot_UI-2](https://github.com/AndroidJamSriLanka/Bucks/blob/master/Bucks%20UI/Screenshot_UI-2.png "Latest Rates")
+
+
+
+
 
 
 ![Screenshot_UI-3](https://github.com/AndroidJamSriLanka/Bucks/blob/master/Bucks%20UI/Screenshot_UI-3.png "Base Currency Setting")
 
 
+
+
+
+
 ![Screenshot_UI-4](https://github.com/AndroidJamSriLanka/Bucks/blob/master/Bucks%20UI/Screenshot_UI-4.png "Rates Decimal Points Setting")
+
+
+
+
+
 
 ![Screenshot_UI-5](https://github.com/AndroidJamSriLanka/Bucks/blob/master/Bucks%20UI/Screenshot_UI-5.png "Sharing live currency rates to your friends")
 
+
+
+
+
 ![UI _1](https://github.com/AndroidJamSriLanka/Bucks/blob/master/Bucks%20UI/UI%20_1.jpg "Initial UI Plan 1")
+
+
+
+
+
 
 ![UI _2](https://github.com/AndroidJamSriLanka/Bucks/blob/master/Bucks%20UI/UI_2.jpg "Initial UI Plan 2")
 
