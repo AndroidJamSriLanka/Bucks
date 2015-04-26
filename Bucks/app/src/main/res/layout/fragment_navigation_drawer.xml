@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/navigationDrawerColor"
+    android:orientation="vertical"
+    android:background="@color/navDrawerBackground"
     tools:context="uom.prageeth.hasitha.bucks.NavigationDrawerFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/drawer_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="" />
+        android:layout_height="match_parent">
+     </android.support.v7.widget.RecyclerView>
 
-</FrameLayout>
+
+</LinearLayout>

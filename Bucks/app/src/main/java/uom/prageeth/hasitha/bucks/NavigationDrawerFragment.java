@@ -2,23 +2,31 @@ package uom.prageeth.hasitha.bucks;
 
 import android.annotation.TargetApi;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class NavigationDrawerFragment extends Fragment {
+public class NavigationDrawerFragment extends Fragment implements NavAdapter.ClickListner{
 
+    private RecyclerView recyclerView;
     public static final String PREF_FILE_NAME = "check";
     public static final String KEY_USER_LEARNED_DRAWER = "user_learned_drawer";
     private ActionBarDrawerToggle mDrawerToggle;
@@ -26,6 +34,7 @@ public class NavigationDrawerFragment extends Fragment {
     private boolean mUserLearnedDrawer;
     private boolean mFromSavedInstanceState;
     private View mView;
+    private NavAdapter adapter;
 
     public NavigationDrawerFragment() {
         // Required empty public constructor
@@ -44,10 +53,36 @@ public class NavigationDrawerFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_navigation_drawer, container, false);
+        View layout = inflater.inflate(R.layout.fragment_navigation_drawer, container, false);
+        recyclerView = (RecyclerView)layout.findViewById(R.id.drawer_list);
+        recyclerView = (RecyclerView)layout.findViewById(R.id.drawer_list);
+        adapter = new NavAdapter(getActivity(),getNavDrawerItems());
+        adapter.setClickListner(this);
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        return layout;
     }
 
+    public static List<NavigationDrawerData> getNavDrawerItems(){
+        List<NavigationDrawerData> data = new ArrayList<>();
+        int[] icon = {R.drawable.ic_trending_up,
+                      R.drawable.ic_check_all,
+                      R.drawable.ic_contrast_box,
+                      R.drawable.ic_history};
+        String[] title ={"Latest Rates",
+                         "Choose Currency",
+                         "Converter",
+                         "History"};
+
+        for(int i=0;((i<title.length)&&(i<icon.length)); i++){
+
+            NavigationDrawerData current = new NavigationDrawerData();
+            current.iconId = icon[i];
+            current.title = title[i];
+            data.add(current);
+        }
+        return data;
+    }
 
     public void setUp(int fragmentId,DrawerLayout drawerLayout, final Toolbar toolbar) {
 
@@ -107,5 +142,25 @@ public class NavigationDrawerFragment extends Fragment {
     public String readFromPreferences(Context context, String preferenceName, String defaultValue){
         SharedPreferences sharedPreferences = context.getSharedPreferences(PREF_FILE_NAME, context.MODE_PRIVATE);
         return sharedPreferences.getString(preferenceName,defaultValue);
+    }
+
+    @Override
+    public void itemClicked(View view, int position) {
+        switch (position) {
+            case 0:
+                startActivity(new Intent(getActivity(), MainActivity.class));
+                break;
+            case 1:
+                startActivity(new Intent(getActivity(), ChooseCurrencyActivity.class));
+                break;
+            case 2:
+                Toast.makeText(getActivity(), "Item Clicked", Toast.LENGTH_SHORT).show();
+                //startActivity(new Intent(getActivity(),ConverterActivity.class));
+                break;
+            case 3:
+                Toast.makeText(getActivity(), "Item Clicked", Toast.LENGTH_SHORT).show();
+                //startActivity(new Intent(getActivity(),HistoryActivity.class));
+                break;
+        }
     }
 }

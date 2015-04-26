@@ -356,4 +356,7 @@
     <!-- Navigation Drawer  -->
     <string name="drawer_open">Open</string>
     <string name="drawer_close">Close</string>
+    <string name="title_activity_choose_currency">Currency</string>
+
+    <string name="hello_world">Hello world!</string>
 </resources>

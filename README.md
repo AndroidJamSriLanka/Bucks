@@ -9,16 +9,17 @@ on every second of the day. The whole business world's profits and losses will d
 
 So if you are,
 
-a student who does some part-time freelancer work, who needs to know what is the exact time you should withdraw your money in local currency,
+ * a student who does some part-time freelancer work, who needs to know what is the exact time you should withdraw your money in local    currency,
 
-a person, who is getting ready to book your air tickets, order a gift to a friend from an online shopping mall or simply exchange you money to another currency,
+ * a person, who is getting ready to book your air tickets, order a gift to a friend from an online shopping mall or simply exchange    you money to another currency,
 
-a small seller or a small company which does importing and exporting goods, wanting to get the maximum profits from your transactions,
+ * a small seller or a small company which does importing and exporting goods, wanting to get the maximum profits from your   transactions,
 
-a CEO or a Director of a big company, who deals with serious financial transactions which worth billions of money.
+ * a CEO or a Director of a big company, who deals with serious financial transactions which worth billions of money.
 
   
 **************************************************************************************************************************************
+
 Solution
  
 "WHY NOT go for an Android App which delivers, live updates on currency exchange rates to your finger tips ??? "
@@ -27,11 +28,13 @@ Solution
  provide features on currency convertions will be a simple tool but it's powerfull enough to touch huge amount of 
  peoples' lives.
 
+
 **************************************************************************************************************************************
 
 Data Sources
 
 - Get Exchange Rates API (http://www.getexchangerates.com/api/)
+
 
 **************************************************************************************************************************************
 
@@ -44,6 +47,29 @@ Work Done
 - Used shared preferences to store the data.
 - Used explicit and implicit intents(share intent).
 - Started creating the database for the app.
+- Used Material Design to the app, making backward compatibility to the previous versions.
+
+
+**************************************************************************************************************************************
+
+User Interface Design
+
+![Bucks Logo]("https://github.com/AndroidJamSriLanka/Bucks/blob/master/Bucks%20UI/Bucks%20Logo.jpg" "Bucks Logo"),
+
+![Screenshot_UI-1]("https://github.com/AndroidJamSriLanka/Bucks/blob/master/Bucks%20UI/Screenshot_UI-1.png" "Navigation Drawer"),
+
+![Screenshot_UI-2]("https://github.com/AndroidJamSriLanka/Bucks/blob/master/Bucks%20UI/Screenshot_UI-2.png" "Latest Rates"),
+
+![Screenshot_UI-3]("https://github.com/AndroidJamSriLanka/Bucks/blob/master/Bucks%20UI/Screenshot_UI-3.png" "Base Currency Setting"),
+
+![Screenshot_UI-4]("https://github.com/AndroidJamSriLanka/Bucks/blob/master/Bucks%20UI/Screenshot_UI-4.png" "Rates Decimal Points Setting"),
+
+![Screenshot_UI-5]("https://github.com/AndroidJamSriLanka/Bucks/blob/master/Bucks%20UI/Screenshot_UI-5.png" "Sharing live currency rates to your friends"),
+
+![UI _1]("https://github.com/AndroidJamSriLanka/Bucks/blob/master/Bucks%20UI/UI%20_1.jpg" "Initial UI Plan 1"),
+
+![UI _2]("https://github.com/AndroidJamSriLanka/Bucks/blob/master/Bucks%20UI/UI_2.jpg" "Initial UI Plan 2")
+
 
 
 

@@ -34,6 +34,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="uom.prageeth.hasitha.bucks.MainActivity" />
         </activity>
+        <activity
+            android:name=".ChooseCurrencyActivity"
+            android:label="@string/title_activity_choose_currency"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="uom.prageeth.hasitha.bucks.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
