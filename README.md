@@ -1,4 +1,8 @@
-<h1>Problem</h1>
+<h1>Bucks</h1>
+
+<h3>App Description</h3>
+
+<h4>Problem</h4>
 
 Money is an essental factor that causes a great impact on human lives. In the modern world, it has become the life blood
 for all most anything and everything. From full filling our day to day needs, such as drinking water, foods and places to live,
@@ -11,16 +15,16 @@ So if you are,
 
  * a student who does some part-time freelancer work, who needs to know what is the exact time you should withdraw your money in local    currency,
 
- * a person, who is getting ready to book your air tickets, order a gift to a friend from an online shopping mall or simply exchange    you money to another currency,
+ * a person, who is getting ready to book your air tickets, order a gift to a friend from an online shopping mall or simply exchange      you money to another currency,
 
- * a small seller or a small company which does importing and exporting goods, wanting to get the maximum profits from your   transactions,
+ * a small seller or a small company which does importing and exporting goods, wanting to get the maximum profits from your      transactions,
 
  * a CEO or a Director of a big company, who deals with serious financial transactions which worth billions of money.
 
   
 **************************************************************************************************************************************
 
-Solution
+<h4>Solution</h4>
  
 "WHY NOT go for an Android App which delivers, live updates on currency exchange rates to your finger tips ??? "
  
@@ -31,14 +35,14 @@ Solution
 
 **************************************************************************************************************************************
 
-Data Sources
+<h4>Data Sources</h4>
 
 - Get Exchange Rates API (http://www.getexchangerates.com/api/)
 
 
 **************************************************************************************************************************************
 
-Work Done
+</h4>Work Done</h4>
 
 - Finalized the data source Get Exchange Rates API.
 - Pasing json data (Currency Base,Currency Codes,Currency Rates) extracted from the API call.
@@ -52,23 +56,33 @@ Work Done
 
 **************************************************************************************************************************************
 
-User Interface Design
+<h3>Screenshots</h3>
 
-![Bucks Logo](https://github.com/AndroidJamSriLanka/Bucks/blob/master/Bucks%20UI/Bucks%20Logo.jpg "Bucks Logo"),
+![Bucks Logo](https://github.com/AndroidJamSriLanka/Bucks/blob/master/Bucks%20UI/Bucks%20Logo.jpg "Bucks Logo")
 
-![Screenshot_UI-1]("https://github.com/AndroidJamSriLanka/Bucks/blob/master/Bucks%20UI/Screenshot_UI-1.png" "Navigation Drawer"),
 
-![Screenshot_UI-2]("https://github.com/AndroidJamSriLanka/Bucks/blob/master/Bucks%20UI/Screenshot_UI-2.png" "Latest Rates"),
+![Bucks Logo]("https://github.com/AndroidJamSriLanka/Bucks/blob/master/Bucks%20UI/Bucks%20Logo.jpg" "Bucks Logo")
 
-![Screenshot_UI-3]("https://github.com/AndroidJamSriLanka/Bucks/blob/master/Bucks%20UI/Screenshot_UI-3.png" "Base Currency Setting"),
 
-![Screenshot_UI-4]("https://github.com/AndroidJamSriLanka/Bucks/blob/master/Bucks%20UI/Screenshot_UI-4.png" "Rates Decimal Points Setting"),
+![Bucks Logo](https://github.com/AndroidJamSriLanka/Bucks/blob/master/Bucks%20UI/Bucks%20Logo.jpg "Bucks Logo")
 
-![Screenshot_UI-5]("https://github.com/AndroidJamSriLanka/Bucks/blob/master/Bucks%20UI/Screenshot_UI-5.png" "Sharing live currency rates to your friends"),
 
-![UI _1]("https://github.com/AndroidJamSriLanka/Bucks/blob/master/Bucks%20UI/UI%20_1.jpg" "Initial UI Plan 1"),
+![Screenshot_UI-1](https://github.com/AndroidJamSriLanka/Bucks/blob/master/Bucks%20UI/Screenshot_UI-1.png "Navigation Drawer")
 
-![UI _2]("https://github.com/AndroidJamSriLanka/Bucks/blob/master/Bucks%20UI/UI_2.jpg" "Initial UI Plan 2")
+
+![Screenshot_UI-2](https://github.com/AndroidJamSriLanka/Bucks/blob/master/Bucks%20UI/Screenshot_UI-2.png "Latest Rates")
+
+
+![Screenshot_UI-3](https://github.com/AndroidJamSriLanka/Bucks/blob/master/Bucks%20UI/Screenshot_UI-3.png "Base Currency Setting")
+
+
+![Screenshot_UI-4](https://github.com/AndroidJamSriLanka/Bucks/blob/master/Bucks%20UI/Screenshot_UI-4.png "Rates Decimal Points Setting")
+
+![Screenshot_UI-5](https://github.com/AndroidJamSriLanka/Bucks/blob/master/Bucks%20UI/Screenshot_UI-5.png "Sharing live currency rates to your friends")
+
+![UI _1](https://github.com/AndroidJamSriLanka/Bucks/blob/master/Bucks%20UI/UI%20_1.jpg "Initial UI Plan 1")
+
+![UI _2](https://github.com/AndroidJamSriLanka/Bucks/blob/master/Bucks%20UI/UI_2.jpg "Initial UI Plan 2")
 
 
 
