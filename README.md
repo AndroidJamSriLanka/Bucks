@@ -54,7 +54,7 @@ Work Done
 
 User Interface Design
 
-![Bucks Logo]("https://github.com/AndroidJamSriLanka/Bucks/blob/master/Bucks%20UI/Bucks%20Logo.jpg" "Bucks Logo"),
+![Bucks Logo](https://github.com/AndroidJamSriLanka/Bucks/blob/master/Bucks%20UI/Bucks%20Logo.jpg "Bucks Logo"),
 
 ![Screenshot_UI-1]("https://github.com/AndroidJamSriLanka/Bucks/blob/master/Bucks%20UI/Screenshot_UI-1.png" "Navigation Drawer"),
 
