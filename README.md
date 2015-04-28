@@ -58,6 +58,7 @@ So if you are,
 
 <h3>Screenshots</h3>
 
+<h5>Bucks Logo</h5>
 
 ![Bucks Logo](https://github.com/AndroidJamSriLanka/Bucks/blob/master/Bucks%20UI/Bucks%20Logo.jpg "Bucks Logo")
 
@@ -65,26 +66,28 @@ So if you are,
 
 
 
+<h5>Navigation Drawer</h5>
 
 ![Screenshot_UI-1](https://github.com/AndroidJamSriLanka/Bucks/blob/master/Bucks%20UI/Screenshot_UI-1.png "Navigation Drawer")
 
 
 
 
-
+<h5>Latest Rates</h5>
 
 ![Screenshot_UI-2](https://github.com/AndroidJamSriLanka/Bucks/blob/master/Bucks%20UI/Screenshot_UI-2.png "Latest Rates")
 
 
 
 
+<h5>Base Currency Setting</h5>
 
 ![Screenshot_UI-3](https://github.com/AndroidJamSriLanka/Bucks/blob/master/Bucks%20UI/Screenshot_UI-3.png "Base Currency Setting")
 
 
 
 
-
+<h5>Rates Decimal Points Setting</h5>
 
 ![Screenshot_UI-4](https://github.com/AndroidJamSriLanka/Bucks/blob/master/Bucks%20UI/Screenshot_UI-4.png "Rates Decimal Points Setting")
 
@@ -92,6 +95,7 @@ So if you are,
 
 
 
+<h5>Sharing live currency rates to your friends</h5>
 
 ![Screenshot_UI-5](https://github.com/AndroidJamSriLanka/Bucks/blob/master/Bucks%20UI/Screenshot_UI-5.png "Sharing live currency rates to your friends")
 
@@ -99,12 +103,35 @@ So if you are,
 
 
 
+
+<h5>Converter UI</h5>
+
+![Screenshot_UI-6](https://github.com/AndroidJamSriLanka/Bucks/blob/master/Bucks%20UI/Screenshot_UI-6.png "Converter")
+
+
+
+
+
+
+
+<h5>History Rates</h5>
+
+![Screenshot_UI-7](https://github.com/AndroidJamSriLanka/Bucks/blob/master/Bucks%20UI/Screenshot_UI-7.png "History")
+
+
+
+
+
+
+<h5>Initial UI Plan 1</h5>
+
 ![UI _1](https://github.com/AndroidJamSriLanka/Bucks/blob/master/Bucks%20UI/UI%20_1.jpg "Initial UI Plan 1")
 
 
 
 
 
+<h5>Initial UI Plan 2</h5>
 
 ![UI _2](https://github.com/AndroidJamSriLanka/Bucks/blob/master/Bucks%20UI/UI_2.jpg "Initial UI Plan 2")
 
