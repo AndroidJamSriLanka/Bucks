@@ -42,6 +42,22 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="uom.prageeth.hasitha.bucks.MainActivity" />
         </activity>
+        <activity
+            android:name=".ConverterActivity"
+            android:label="@string/title_activity_converter"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="uom.prageeth.hasitha.bucks.MainActivity" />
+        </activity>
+        <activity
+            android:name=".HistoryActivity"
+            android:label="@string/title_activity_history"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="uom.prageeth.hasitha.bucks.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

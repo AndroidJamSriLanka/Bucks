@@ -359,4 +359,6 @@
     <string name="title_activity_choose_currency">Currency</string>
 
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_converter">Converter</string>
+    <string name="title_activity_history">History</string>
 </resources>
